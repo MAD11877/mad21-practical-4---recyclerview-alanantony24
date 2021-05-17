@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         followToggler();
     }
     public void followToggler(){
-        Button btn = findViewById(R.id.followBtn);
+        Button btn = findViewById(R.id.btnFollow);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         textView.setText(intent.getExtras().get("Name").toString());
         description.setText(intent.getExtras().get("Description").toString());
-        Button btn = findViewById(R.id.followBtn);
+        Button btn = findViewById(R.id.btnFollow);
         if(!user.followed){
             btn.setText("Follow");
         }

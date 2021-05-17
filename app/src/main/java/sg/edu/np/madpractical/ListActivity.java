@@ -1,15 +1,10 @@
 package sg.edu.np.madpractical;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -35,7 +30,7 @@ public class ListActivity extends AppCompatActivity {
             data.add(u);
         }
         //Populate RV
-        RecyclerView rv = findViewById(R.id.recyclerView);
+        RecyclerView rv = findViewById(R.id.rv);
         UserAdapter adapter = new UserAdapter(data, this);
         LinearLayoutManager lm = new LinearLayoutManager(this);
         rv.setLayoutManager(lm);
