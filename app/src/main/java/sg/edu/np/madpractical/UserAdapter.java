@@ -25,7 +25,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder>{
     @NonNull
     @Override
     public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.vh_userinfo, parent, false);
+        View view  = null;
+        if(viewType == 0){
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.vh_userinfo_alt, parent, false);
+        }
+        else{
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.vh_userinfo, parent, false);
+        }
         UserViewHolder viewHolder = new UserViewHolder(view);
         return viewHolder;
     }
@@ -65,4 +71,14 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder>{
         return data.size();
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        String name = data.get(position).getName();
+        if (name.charAt(name.length() - 1) == '7'){
+            return 0;
+        }
+        else{
+            return 1;
+        }
+    }
 }
