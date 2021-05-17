@@ -16,12 +16,12 @@ import java.util.Random;
 
 public class ListActivity extends AppCompatActivity {
 
+    static ArrayList<User> data = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         //Generating user information
-        ArrayList<User> data = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
             Random r = new Random();
             final int min = 1000000000;
